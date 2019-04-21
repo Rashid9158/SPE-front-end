@@ -68,7 +68,7 @@ public class Display extends AppCompatActivity {
 
                         @Override
                         public void onErrorResponse(VolleyError error) {
-                            // no errors in this project
+                            // no errors
                             requestQueue.stop();
                         }
                     }

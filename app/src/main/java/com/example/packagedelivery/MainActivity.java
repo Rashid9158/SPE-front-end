@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void create(View view) {
-
+        startActivity(new Intent(this, Detail.class));
     }
 
     public void search(View view) {
