@@ -59,7 +59,7 @@ public class Fetchdata extends AsyncTask<Void, Void, String> {
 
                     JSONObject JO = new JSONObject(data);
 
-                    singleparsed = "Phone number :" + JO.get("phone")  + "\n\n" + "Product Id :" + JO.get("productid") + "\n\n" + "Ordered from : " + JO.get("orderedfrom") + "\n\n" + "Quantity :" + JO.get("quantity");
+                    singleparsed = "Phone number :" + JO.get("phone")  + "\n\n" + "Product Id :" + JO.get("productid") + "\n\n" + "Ordered from : " + JO.get("orderedfrom") + "\n\n" + "Quantity :" + JO.get("quantity") + "\n\n" + "Status :" + JO.get("status");
                 }
                 else{
 
@@ -81,7 +81,7 @@ public class Fetchdata extends AsyncTask<Void, Void, String> {
                         for (int i = JA.length()-1; i>=0 ; i--) {
                             JSONObject JO = (JSONObject) JA.get(i);
 
-                            singleparsed = singleparsed + "Phone number :" + JO.get("phone") + "\n\n" + "Product Id :" + JO.get("productid") + "\n\n" + "Ordered from : " + JO.get("orderedfrom") + "\n\n" + "Quantity :" + JO.get("quantity") + "\n\n" + "Delivery date :" + JO.get("datetime") + "\n\n\n\n";
+                            singleparsed = singleparsed + "Phone number :" + JO.get("phone") + "\n\n" + "Product Id :" + JO.get("productid") + "\n\n" + "Ordered from : " + JO.get("orderedfrom") + "\n\n" + "Quantity :" + JO.get("quantity") + "\n\n" + "Status :" + JO.get("status")+ "\n\n" + "Delivery date :" + JO.get("datetime") + "\n\n\n\n";
 
                         }
                     }
