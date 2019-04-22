@@ -19,7 +19,7 @@ import com.android.volley.toolbox.Volley;
 
 public class Display extends AppCompatActivity {
 
-    static TextView TV;
+    TextView TV;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +27,10 @@ public class Display extends AppCompatActivity {
         setContentView(R.layout.display_layout);
 
         TV = (TextView)findViewById(R.id.detail);
+
+        Intent intent = getIntent();
+        String value = intent.getStringExtra("value");
+        TV.setText(value);
     }
 
     @Override
@@ -46,7 +50,6 @@ public class Display extends AppCompatActivity {
         else {
 
             String phone = detail.substring(14,24);
-            System.out.println(phone);
 
             String url = "http://192.168.0.101:3000/sec_guard/" + phone + "/";
 

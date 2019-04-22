@@ -1,10 +1,11 @@
 package com.example.packagedelivery;
 
+
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.TextView;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -32,6 +33,10 @@ public class MainActivity extends AppCompatActivity {
         Intent myIntent = new Intent(this, Search.class);
         myIntent.putExtra("key", "new");
         startActivity(myIntent);
+    }
+
+    public void  scan(View view) {
+        startActivity(new Intent(this, QRScan.class));
     }
 
     public void find(View view) {

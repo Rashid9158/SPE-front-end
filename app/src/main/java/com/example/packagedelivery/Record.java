@@ -9,14 +9,18 @@ import android.widget.TextView;
 
 public class Record extends AppCompatActivity {
 
-    static TextView RT;
+    TextView RT;
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.record_layout);
 
         RT = (TextView)findViewById(R.id.data);
+
+        Intent intent = getIntent();
+        String value = intent.getStringExtra("value");
+        RT.setText(value);
     }
 
     @Override

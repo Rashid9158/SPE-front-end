@@ -17,27 +17,29 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 
-public class Fetchdata extends AsyncTask<Void, Void, Void> {
+public class Fetchdata extends AsyncTask<Void, Void, String> {
 
     String data = "";
     String singleparsed = "";
     String key;
+    String phone;
 
-    public Fetchdata(String key) {
+    public Fetchdata(String key, String phone) {
         this.key=key;
+        this.phone=phone;
     }
 
     @Override
-    protected Void doInBackground(Void... voids) {
+    protected String doInBackground(Void... voids) {
 
         try {
 
             URL url;
 
             if(this.key.equals("new"))
-                url = new URL("http://192.168.0.101:3000/sec_guard/" + Search.phone + "/");
+                url = new URL("http://192.168.0.101:3000/sec_guard/" + this.phone + "/");
             else
-                url = new URL("http://192.168.0.101:3000/sec_guard/search/" + Search.phone + "/");
+                url = new URL("http://192.168.0.101:3000/sec_guard/search/" + this.phone + "/");
 
             HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
 
@@ -94,17 +96,7 @@ public class Fetchdata extends AsyncTask<Void, Void, Void> {
             e.printStackTrace();
         }
 
-        return null;
+        return singleparsed;
     }
 
-
-    @Override
-    protected void onPostExecute(Void aVoid) {
-        super.onPostExecute(aVoid);
-
-        if(key.equals("new"))
-            Display.TV.setText(this.singleparsed);
-        else
-            Record.RT.setText(this.singleparsed);
-    }
 }

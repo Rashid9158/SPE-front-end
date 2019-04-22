@@ -7,12 +7,13 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.concurrent.ExecutionException;
 import java.util.regex.Pattern;
 
 public class Search extends AppCompatActivity{
 
     EditText PHONE;
-    static String phone;
+    String phone;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,17 +39,31 @@ public class Search extends AppCompatActivity{
             Intent intent = getIntent();
             String key = intent.getStringExtra("key");
 
-            if (key.equals("new"))
-                startActivity(new Intent(this, Display.class));
-            else
-                startActivity(new Intent(this, Record.class));
+            String temp="";
 
-            Fetchdata process = new Fetchdata(key);
-            process.execute();
+            Fetchdata process = new Fetchdata(key, phone);
+
+            try {
+                temp = process.execute().get();
+            } catch (ExecutionException e) {
+                e.printStackTrace();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
+            Intent myIntent;
+
+            if (key.equals("new"))
+                myIntent = new Intent(this, Display.class);
+            else
+                myIntent = new Intent(this, Record.class);
+
+            myIntent.putExtra("value", temp);
+            startActivity(myIntent);
+            finish();
         }
         else
             Toast.makeText(getApplicationContext(),"Enter valid phone number",Toast.LENGTH_SHORT).show();
-
 
     }
 
