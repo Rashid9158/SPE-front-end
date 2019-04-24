@@ -36,7 +36,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void  scan(View view) {
-        startActivity(new Intent(this, QRScan.class));
+
+        Intent myIntent = new Intent(this, QRScan.class);
+        myIntent.putExtra("from", "qr");
+        startActivity(myIntent);
     }
 
     public void find(View view) {

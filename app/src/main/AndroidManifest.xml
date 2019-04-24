@@ -24,6 +24,7 @@
         <activity android:name=".Record"/>
         <activity android:name=".Detail"/>
         <activity android:name=".QRScan"/>
+        <activity android:name=".Pickup"/>
 
     </application>
 

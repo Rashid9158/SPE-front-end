@@ -45,8 +45,11 @@ public class Display extends AppCompatActivity {
 
         String detail = TV.getText().toString();
 
-        if(detail.equals("Delivery Not Found"))
+        if(detail.equals("Delivery Not Found")) {
+
             Toast.makeText(getApplicationContext(), "Nothing to deliver", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(this, MainActivity.class));
+        }
         else {
 
             String phone = detail.substring(14,24);
@@ -61,9 +64,8 @@ public class Display extends AppCompatActivity {
 
                         @Override
                         public void onResponse(String response) {
-
-                            Toast.makeText(getApplicationContext(), "Package Delivered", Toast.LENGTH_SHORT).show();
                             requestQueue.stop();
+                            // no response
                         }
                     },
 
@@ -71,14 +73,19 @@ public class Display extends AppCompatActivity {
 
                         @Override
                         public void onErrorResponse(VolleyError error) {
-                            // no errors
                             requestQueue.stop();
+                            // no errors
                         }
                     }
             );
             requestQueue.add(stringRequest);
+
+            Intent myIntent = new Intent(this, QRScan.class);
+            myIntent.putExtra("from", "bar");
+            myIntent.putExtra("mobile", phone);
+            startActivity(myIntent);
         }
-        startActivity(new Intent(this, MainActivity.class));
+
     }
 
 
