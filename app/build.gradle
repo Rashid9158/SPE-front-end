@@ -7,7 +7,11 @@ android {
         minSdkVersion 16
         targetSdkVersion 28
         versionCode 1
+<<<<<<< HEAD
         versionName "4.0"
+=======
+        versionName "3.0"
+>>>>>>> e823a58678bb62dead834c53717a549a32dceefd
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
