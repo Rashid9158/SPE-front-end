@@ -19,17 +19,34 @@ import static org.robolectric.Shadows.shadowOf;
 
 @RunWith(RobolectricTestRunner.class)
 public class ExampleUnitTest {
-    @Test
-    public void addition_isCorrect() {
-        assertEquals(4, 2 + 2);
-    }
+
 
     @Test
-    public void clickingLogin_shouldStartLoginActivity() {
+    public void clickingCreate_shouldStartDetailActivity() {
         MainActivity activity = Robolectric.setupActivity(MainActivity.class);
         activity.findViewById(R.id.newPack).performClick();
 
         Intent expectedIntent = new Intent(activity, Detail.class);
+        Intent actual = shadowOf(RuntimeEnvironment.application).getNextStartedActivity();
+        assertEquals(expectedIntent.getComponent(), actual.getComponent());
+    }
+
+    @Test
+    public void clickingSearch_shouldStartSearchActivity() {
+        MainActivity activity = Robolectric.setupActivity(MainActivity.class);
+        activity.findViewById(R.id.searchCur).performClick();
+
+        Intent expectedIntent = new Intent(activity, Search.class);
+        Intent actual = shadowOf(RuntimeEnvironment.application).getNextStartedActivity();
+        assertEquals(expectedIntent.getComponent(), actual.getComponent());
+    }
+
+    @Test
+    public void clickingQR_shouldStartQRActivity() {
+        MainActivity activity = Robolectric.setupActivity(MainActivity.class);
+        activity.findViewById(R.id.scan).performClick();
+
+        Intent expectedIntent = new Intent(activity, QRScan.class);
         Intent actual = shadowOf(RuntimeEnvironment.application).getNextStartedActivity();
         assertEquals(expectedIntent.getComponent(), actual.getComponent());
     }
