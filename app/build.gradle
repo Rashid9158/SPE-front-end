@@ -7,13 +7,18 @@ android {
         minSdkVersion 16
         targetSdkVersion 28
         versionCode 1
-      versionName "4.0"
+      versionName "5.0"
        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
    }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    testOptions {
+        unitTests {
+            includeAndroidResources = true
         }
     }
 }
@@ -32,4 +37,6 @@ dependencies {
     // third way
     implementation 'com.google.android.gms:play-services-auth:16.0.0'
     implementation 'me.dm7.barcodescanner:zxing:1.9'
+    // roboelectric
+    testImplementation 'org.robolectric:robolectric:4.2'
 }
