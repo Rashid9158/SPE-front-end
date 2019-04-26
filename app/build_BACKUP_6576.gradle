@@ -7,8 +7,20 @@ android {
         minSdkVersion 16
         targetSdkVersion 28
         versionCode 1
-       versionName "4.0"
-       testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+        versionName "1.0"
+=======
+        versionName "4.0"
+>>>>>>> e823a58678bb62dead834c53717a549a32dceefd
+=======
+        versionName "4.0"
+>>>>>>> 9d83929f27947405fe706b0cfd857acbda2998eb
+=======
+        versionName "4.0"
+>>>>>>> 20aef11a942ed8e355e6c2bbc85608eaeb2ae001
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
