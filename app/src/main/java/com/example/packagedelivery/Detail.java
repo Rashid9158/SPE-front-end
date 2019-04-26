@@ -61,7 +61,7 @@ public class Detail extends AppCompatActivity {
                 e.printStackTrace();
             }
 
-            String url = "http://192.168.0.101:3000/sec_guard/";
+            String url = "http://172.16.130.103:3000/sec_guard/";
 
             final RequestQueue requestQueue = Volley.newRequestQueue(Detail.this);
 

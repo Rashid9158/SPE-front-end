@@ -38,7 +38,7 @@ public class Deliverdata {
         }
 
 
-        String url = "http://192.168.0.101:3000/sec_guard/search/" + this.phone + "/";
+        String url = "http://172.16.130.103:3000/sec_guard/search/" + this.phone + "/";
 
         final RequestQueue requestQueue = Volley.newRequestQueue(this.ctx);
 

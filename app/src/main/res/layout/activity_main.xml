@@ -19,40 +19,44 @@
         android:textSize="35dp"
         android:text="Choose" />
 
-    <TextView
+    <Button
         android:id="@+id/newPack"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
         android:layout_marginTop="60dp"
-        android:textSize="25dp"
-        android:text="-> Make a new entry"
+        android:textSize="20dp"
+        android:text="Make a new entry"
         android:onClick="create"/>
 
-    <TextView
+    <Button
         android:id="@+id/searchCur"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
         android:layout_marginTop="20dp"
-        android:textSize="25dp"
-        android:text="-> Search new deliveries"
+        android:textSize="20dp"
+        android:text="Search new deliveries"
         android:onClick="search"/>
 
-    <TextView
+    <Button
         android:id="@+id/scan"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
         android:layout_marginTop="20dp"
-        android:textSize="25dp"
-        android:text="-> QR Scan"
+        android:textSize="20dp"
+        android:text="QR Scan"
         android:onClick="scan"/>
 
-    <TextView
+    <Button
         android:id="@+id/searchOld"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
         android:layout_marginTop="20dp"
-        android:textSize="25dp"
-        android:text="-> Search delivered package"
+        android:textSize="20dp"
+        android:text="Search delivered packages"
         android:onClick="find"/>
 
 

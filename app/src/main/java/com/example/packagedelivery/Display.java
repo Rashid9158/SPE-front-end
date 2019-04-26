@@ -54,7 +54,7 @@ public class Display extends AppCompatActivity {
 
             String phone = detail.substring(14,24);
 
-            String url = "http://192.168.0.101:3000/sec_guard/" + phone + "/";
+            String url = "http://172.16.130.103:3000/sec_guard/" + phone + "/";
 
             final RequestQueue requestQueue = Volley.newRequestQueue(Display.this);
 

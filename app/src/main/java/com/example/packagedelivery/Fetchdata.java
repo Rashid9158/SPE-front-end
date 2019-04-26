@@ -37,9 +37,9 @@ public class Fetchdata extends AsyncTask<Void, Void, String> {
             URL url;
 
             if(this.key.equals("new"))
-                url = new URL("http://192.168.0.101:3000/sec_guard/" + this.phone + "/");
+                url = new URL("http://172.16.130.103:3000/sec_guard/" + this.phone + "/");
             else
-                url = new URL("http://192.168.0.101:3000/sec_guard/search/" + this.phone + "/");
+                url = new URL("http://172.16.130.103:3000/sec_guard/search/" + this.phone + "/");
 
             HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
 
